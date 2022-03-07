@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
-using Play.Catalog.Service.Repositories;
 using Play.Catalog.Service.Entities;
+using Play.Common;
 
 namespace Play.Catalog.Service.Controllers;
 
@@ -16,9 +16,9 @@ public class ItemsController : ControllerBase
     //     new(Guid.NewGuid(), "Bronze sword", "Deals a small amount of damage", 20, DateTimeOffset.UtcNow)
     // };
 
-    private readonly IItemsRepository _itemsRepository;
+    private readonly IRepository<Item> _itemsRepository;
 
-    public ItemsController(IItemsRepository itemsRepository)
+    public ItemsController(IRepository<Item> itemsRepository)
     {
         _itemsRepository = itemsRepository;
     }

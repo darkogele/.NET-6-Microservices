@@ -1,6 +1,8 @@
+using Play.Common;
+
 namespace Play.Catalog.Service.Entities;
 
-public class Item
+public class Item : IEntity
 {
     public Item(string name, string description, decimal price, DateTimeOffset createdDate)
     {
